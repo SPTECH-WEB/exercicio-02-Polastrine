@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edb0f62c-a176-4de4-b043-962b107173ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/designpattern/exercicio02/controller/FreteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/designpattern/exercicio02/repository/FreteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/designpattern/exercicio02/service/FreteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/designpattern/exercicio02/service/adapters/TransportadoraExternaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/designpattern/exercicio02/service/strategies/EconomicaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/designpattern/exercicio02/service/strategies/ExpressaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/designpattern/exercicio02/service/strategies/TransportadoraService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +82,7 @@
       <workItem from="1744073872585" duration="521000" />
       <workItem from="1744074655822" duration="184000" />
       <workItem from="1744074925791" duration="161000" />
-      <workItem from="1744075093283" duration="9613000" />
+      <workItem from="1744075093283" duration="9990000" />
     </task>
     <servers />
   </component>

@@ -1,50 +1,36 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/ZTMgf5TT)
-# 📘 Projeto Prático: Sistema de Entrega e Notificação com Design Patterns
+# Exemplo de Design Patterns: Strategy e Adapter
 
-## 🌟 Objetivo
-Este projeto tem como objetivo praticar a implementação dos padrões de projeto **Adapter**, **Strategy** e **Observer** utilizando **Java com Spring Boot**, simulando um sistema de logística de uma plataforma de e-commerce.
+## **1. Strategy**
 
----
+O padrão **Strategy** é usado para definir um conjunto de services que possam ser alternados.
+Ele permite que o comportamento de uma classe seja alterado em tempo de execução sem modificar o código.
+Traz flexibilidade ao projeto.
 
-## 📖 Contexto
-Você foi contratado para desenvolver um módulo de **logística**. Esse módulo deve calcular valores de frete com diferentes transportadoras, integrar-se com uma transportadora externa e notificar o cliente e equipe interna após o processamento de uma entrega.
-
----
-
-## 📊 Requisitos do Sistema
-
-### 1. Cálculo de Frete (**Strategy Pattern**)
-- O sistema deve oferecer três modalidades de entrega:
-  - Entrega Expressa
-  - Entrega Econômica
-  - Transportadora Terceirizada
-- Cada modalidade deve ter uma **regra de cálculo de frete diferente**.
-- A escolha da modalidade deve ser feita de forma **dinâmica**, via parâmetro na requisição.
-
-### 2. Integração com Transportadora Externa (**Adapter Pattern**)
-- Uma transportadora externa fornece uma API que não segue os padrões do seu sistema.
-- Deve-se criar um **adaptador** que permita integrar a API externa sem alterar o funcionamento interno do sistema.
+### **Como utilizei no projeto:**
+- O cálculo de frete é implementado usando o padrão Strategy.
+- Cada modalidade de frete (por exemplo, transportadora externa) pode ter sua própria lógica de cálculo.
+- A classe `FreteService` utiliza diferentes estratégias para calcular o frete com base na modalidade escolhida.
 
 ---
 
-## 🚀 Funcionalidades Esperadas
-- Um endpoint HTTP que receba o **peso** e a **modalidade** da entrega.
-- Cálculo automático do frete com base na estratégia escolhida.
-- Uso do **adapter** para integrar com a transportadora externa (quando necessário).
-- Notificação automática de todos os observadores ao concluir a entrega.
+## **2. Adapter**
+
+O padrão **Adapter** é usado para "adaptar" uma interface existente para que ela funcione com outra interface esperada. 
+Ele é útil quando você precisa integrar sistemas ou classes que não foram projetados para trabalhar juntos.
+Traz segurança, pois evita que quebre o código existente e funcional.
+
+### **Como utilizei no projeto projeto:**
+- A classe `TransportadoraExternaService` implementa o padrão Adapter.
+- Ela adapta a lógica de cálculo de uma transportadora externa (`TransportadoraService`) para que seja compatível com a interface `FreteRepository` usada no sistema.
 
 ---
 
-## 🧠 Desafios Propostos
-- Implementar os três padrões de forma clara e funcional.
-- Permitir que novas estratégias, integrações ou notificadores possam ser adicionados **sem alterar o código existente**.
+## **Como usar o projeto**
 
----
+1. **Endpoint principal:**  
+   - `GET /fretes?modalidade={modalidade}&peso={peso}`  
+   Calcula o frete com base na modalidade e peso informados.
 
-## 📦 Entregáveis
-1. Código-fonte Java/Spring Boot com a implementação dos padrões.
-2. `README.md` com explicações sobre o uso dos padrões.
-
----
-
-
+2. **Endpoint para transportadora externa:**  
+   - `GET /fretes/transportadoraExterna?peso={peso}`  
+   Calcula o frete utilizando a transportadora externa.
